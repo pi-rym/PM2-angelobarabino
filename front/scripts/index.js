@@ -1,9 +1,4 @@
 console.log(tempData);
-[    { title: 'Pelicula 1', year: 2017, director: 'Director 1' },
-    { title: 'Pelicula 2', year: 1977, director: 'Director 2' },
-    { title: 'Pelicula 3', year: 2001, director: 'Director 3' },
-]
-    ;
 
 const movieContainer = document.getElementById("movie-container");
 
@@ -34,13 +29,55 @@ function createMovieCard(movie) {
   return card;
 }
 
-function renderMovies() {
-  tempData.forEach(movie => {
-    const card = createMovieCard(movie);
-    movieContainer.appendChild(card);
-  });
-}document.addEventListener("DOMContentLoaded", function () {
-    renderMovies();
-  });
-  
+function renderMovies(movies) {
+  const movieContainer = document.getElementById("movie-container");
+
+  // Verifica que movieContainer no sea null
+  if (movieContainer) {
+    // Limpia el contenido previo del contenedor
+    movieContainer.innerHTML = "";
+
+    // Verifica que movies esté definido y sea un array
+    if (Array.isArray(movies)) {
+      movies.forEach(movie => {
+        const card = createMovieCard(movie);
+        movieContainer.appendChild(card);
+      });
+    } else {
+      console.error("El formato de las películas no es válido.");
+    }
+  } else {
+    console.error("El contenedor de películas no se encontró en el documento.");
+  }
+}
+
+function fetchDataAndRenderMovies() {
+  const apiUrl = "https://students-api.2.us-1.fl0.io/movies";
+
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error en la solicitud: ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Imprime la respuesta para depuración
+      console.log("Respuesta de la API:", data);
+
+      // Verifica si la respuesta es un array y tiene al menos un elemento
+      if (Array.isArray(data) && data.length > 0) {
+        renderMovies(data);
+      } else {
+        console.error("La respuesta de la API no contiene un array válido de películas.");
+      }
+    })
+    .catch(error => {
+      console.error(`Error: ${error.message}`);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetchDataAndRenderMovies();
+});
 
