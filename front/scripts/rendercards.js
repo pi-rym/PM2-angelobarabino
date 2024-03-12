@@ -30,7 +30,7 @@ function createMovieCard(movie) {
   });
   
   function fetchDataAndRenderMovies() {
-    const apiUrl = "https://students-api.2.us-1.fl0.io/movies";
+    const apiUrl = "https://students-api.up.railway.app/movies";
   
     fetch(apiUrl)
       .then(response => {
@@ -71,3 +71,4 @@ function createMovieCard(movie) {
     }
   }
   module.exports=renderMovies;
+  
