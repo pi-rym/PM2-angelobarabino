@@ -26,7 +26,7 @@ obtenerPeliculas();
 
 const main = async () => {
   console.log("esta saliendo todo bien");
-  const response = await axios.get("https://localhost:3500/movies")
+  const response = await axios.get("https://localhost:3002/movies")
   renderCards(response.data); 
 };
 
