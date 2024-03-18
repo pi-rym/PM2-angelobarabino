@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use('/', indexRouter);
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3311;
 
 
 app.listen(port, () => {

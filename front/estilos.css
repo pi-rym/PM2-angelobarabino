@@ -2,17 +2,20 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
 }
 
-header, nav, main, footer {
-    margin: 20px;
-}
-
-header {
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
     text-align: center;
 }
 
 nav {
+    display: flex;
+    justify-content: center;
     background-color: #333;
     padding: 10px;
 }
@@ -30,84 +33,51 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: #fff;
+    font-weight: bold;
 }
 
 main {
     display: flex;
-    justify-content: center;
-}
-
-#peliculas-container {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 20px;
 }
 
 .card {
-    border: 1px solid #ddd;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-  }
-  
-  header, footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-  }
-  
-  main {
-    display: flex;
-    overflow-x: auto; 
-    padding: 20px;
-  }
-  
-  .card {
-    background-color: #fff;
+    background-color: #2c2c2c; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-right: 5px; /* Agrega un margen derecho para separar las tarjetas */
-    overflow: hidden;
+    margin: 20px;
+    padding: 10px;
     width: 300px;
-  }
-  
-  .card img {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+
+.card img {
     max-width: 100%;
-  }
-  
-  .card-title {
+    border-radius: 8px;
+}
+
+.card-title {
     font-size: 1.2em;
     font-weight: bold;
     margin: 10px 0;
-  }
-  
-  .card-info {
+    color: #fff;
+}
+
+.card-info {
     margin: 10px;
-  }
-  
-  .card-info p {
+    color: #ccc;
+}
+
+.card-info p {
     margin: 5px 0;
-  }
-  
-  
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
