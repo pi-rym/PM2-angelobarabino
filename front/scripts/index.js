@@ -1,12 +1,13 @@
 console.log("tempData");
 const movieContainer = document.getElementById("movie-container");
+const { render } = require("../../back/src/server");
 const renderCards = require ("./rendercards");
 
 const axios = require('axios');
 
 
 async function obtenerPeliculas() {
-  // URL de la petición
+ 
   const url = 'https://students-api.up.railway.app/movies';
 
   try {
@@ -22,3 +23,11 @@ async function obtenerPeliculas() {
 }
 obtenerPeliculas();
 
+
+const main = async () => {
+  console.log("esta saliendo todo bien");
+  const response = await axios.get("https://localhost:3500/movies")
+  renderCards(response.data); 
+};
+
+main();

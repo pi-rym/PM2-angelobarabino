@@ -6,9 +6,9 @@ module.exports =  {
 
     entry: {
 
-        index: "./public/scripts/index.js",
+        index: "./scripts/index.js",
 
-        script: "./public/scripts/scriptList.js",
+        script: "./public/bundle.js",
 
       },
 
