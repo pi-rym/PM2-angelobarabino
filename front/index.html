@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
 
     <title>Document</title>
    
@@ -17,7 +19,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./estilos.css"/>
     
-    <h1>Proyecto de M2 Prueba</h1>
+    <h1>CineFlix</h1>
     <nav>
       <ul>
           <li><a href="#">Inicio</a></li>
@@ -30,28 +32,34 @@
   <main>
     <id="movie-container">
       
-      <div class="container">
-        <h2>Formulario</h2>
-        <form>
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
-          </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
-          </div>
-          <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-      </div>
-      <section id="movie-container">
-          
-      </section>
-  </main>
+    <div class="container">
+  </div>
+  <section id="movie-container"></section>
+  <h2>Formulario</h2>
+  <form id="movieForm">
+    <div class="form-group">
+      <label for="title">Película</label>
+      <input type="text" class="form-control" id="title" placeholder="Ingresa el título de la película">
+    </div>
+    <div class="form-group">
+      <label for="year">Año de Lanzamiento</label>
+      <input type="number" class="form-control" id="year" placeholder="Ingresa el año de lanzamiento">
+    </div>
+    <div class="form-group">
+      <label for="director">Director</label>
+      <input type="text" class="form-control" id="director" placeholder="Ingresa el nombre del director">
+    </div>
+    <div class="form-group">
+      <label for="genre">Género</label>
+      <input type="text" class="form-control" id="genre" placeholder="Ingresa uno o más géneros">
+    </div>
+    <div class="form-group">
+      <label for="poster">Foto</label>
+      <input type="url" class="form-control" id="poster" placeholder="Ingresa la URL de la foto">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  
     <script src="./public/bundle.js"></script>
     
   </body>

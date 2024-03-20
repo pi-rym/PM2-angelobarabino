@@ -30,7 +30,7 @@ function createMovieCard(movie) {
   });
   
   function fetchDataAndRenderMovies() {
-    const apiUrl = "https://students-api.up.railway.app/movies";
+    const apiUrl = "http://localhost:3000/peliculas";
   
     fetch(apiUrl)
       .then(response => {

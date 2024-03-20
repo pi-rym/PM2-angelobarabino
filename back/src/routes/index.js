@@ -1,6 +1,9 @@
-const {Router} = require ('express')
-const moviescontroller = require('/Users/barab/OneDrive/Escritorio/henry angelo/PM2-angelobarabino/back/src/controllers/moviescontroller')
-const {get} = require('../server')
-const indexRouter = Router()
-indexRouter.get("/movies" , moviescontroller.getmovies);
-module.exports = indexRouter
+const express = require('express');
+const movieController = require('../controllers/moviescontroller'); 
+
+const router = express.Router();
+
+// Ruta para obtener todas las películas
+router.get('/movies', movieController.getMovies); 
+
+module.exports = router;

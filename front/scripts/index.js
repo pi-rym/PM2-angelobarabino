@@ -8,7 +8,7 @@ const axios = require('axios');
 
 async function obtenerPeliculas() {
  
-  const url = 'https://students-api.up.railway.app/movies';
+  const url = 'http://localhost:3000/peliculas';
 
   try {
     
@@ -21,13 +21,37 @@ async function obtenerPeliculas() {
     console.error('Error al obtener las películas:', error);
   }
 }
-obtenerPeliculas();
+obtenerpeliculas();
 
 
 const main = async () => {
   console.log("esta saliendo todo bien");
-  const response = await axios.get("https://localhost:3311/movies")
+  const response = await axios.get('http://localhost:3000/peliculas')
   renderCards(response.data); 
 };
 
 main();
+$(document).ready(function() {
+  $('#movieForm').submit(function(event) {
+    event.preventDefault(); 
+    
+
+    var title = $('#title').val();
+    var year = $('#year').val();
+    var director = $('#director').val();
+    var genre = $('#genre').val();
+    var poster = $('#poster').val();
+    
+    
+    var movieData = {
+      title: title,
+      year: year,
+      director: director,
+      genre: genre,
+      poster: poster
+    };
+    
+    
+  
+});
+})
