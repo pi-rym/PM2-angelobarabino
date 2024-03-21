@@ -30,7 +30,7 @@ function createMovieCard(movie) {
   });
   
   function fetchDataAndRenderMovies() {
-    const apiUrl = "http://localhost:3000/peliculas";
+    const apiUrl = "http://localhost:4057/peliculas";
   
     fetch(apiUrl)
       .then(response => {

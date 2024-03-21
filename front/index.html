@@ -1,67 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-
-
-    <title>Document</title>
-   
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  </head>
-  <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./estilos.css"/>
-    
-    <h1>CineFlix</h1>
-    <nav>
-      <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="Sobre mi.html">Sobre Mi</a></li>
-          <li><a href="Curiosidades.html">Datos curisosos sobre el cine</a></li>
-          <li><a href="webs recomendadas.html">Webs recomendadas</a></li>
-      </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineFlix</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./estilos.css"/>
+</head>
+<body>
+  <h1>CineFlix</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="Sobre mi.html">Sobre Mi</a></li>
+      <li><a href="Curiosidades.html">Datos curiosos sobre el cine</a></li>
+      <li><a href="webs recomendadas.html">Webs recomendadas</a></li>
+    </ul>
   </nav>
 
   <main>
-    <id="movie-container">
-      
     <div class="container">
-  </div>
-  <section id="movie-container"></section>
-  <h2>Formulario</h2>
-  <form id="movieForm">
-    <div class="form-group">
-      <label for="title">Película</label>
-      <input type="text" class="form-control" id="title" placeholder="Ingresa el título de la película">
-    </div>
-    <div class="form-group">
-      <label for="year">Año de Lanzamiento</label>
-      <input type="number" class="form-control" id="year" placeholder="Ingresa el año de lanzamiento">
-    </div>
-    <div class="form-group">
-      <label for="director">Director</label>
-      <input type="text" class="form-control" id="director" placeholder="Ingresa el nombre del director">
-    </div>
-    <div class="form-group">
-      <label for="genre">Género</label>
-      <input type="text" class="form-control" id="genre" placeholder="Ingresa uno o más géneros">
-    </div>
-    <div class="form-group">
-      <label for="poster">Foto</label>
-      <input type="url" class="form-control" id="poster" placeholder="Ingresa la URL de la foto">
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-  
-    <script src="./public/bundle.js"></script>
-    
-  </body>
-<footer>Elaborado por Angelo Barabino 2024</footer>
-</html>
+      <section id="movie-container"></section>
+      <h2>Formulario</h2>
+      <form id="movieForm">
+        <div class="form-group">
+          <label for="title">Película</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Ingresa el título de la película" required>
+        </div>
+        <div class="form-group">
+          <label for="year">Año de Lanzamiento</label>
+          <input type="number" class="form-control" id="year" name="year" placeholder="Ingresa el año de lanzamiento" required>
+        </div>
+        <div class="form-group">
+          <label for="director">Director</label>
+          <input type="text" class="form-control" id="director" name="director" placeholder="Ingresa el nombre del director" required>
+        </div>
+        <div class="form-group">
+          <label for="genre">Género (separados por comas)</label>
+          <input type="text" class="form-control" id="genre" name="genre" placeholder="Ingresa uno o más géneros separados por comas" required>
+        </div>
+        <div class="form-group">
+          <label for="rating">Valoración (1.0 - 10.0)</label>
+          <input type="number" class="form-control" id="rating" name="rating" step="0.1" min="1.0" max="10.0" placeholder="Ingresa la valoración de la película" required>
+        </div>
+        <div class="form-group">
+          <label for="duration">Duración</label>
+          <input type="text" class="form-control" id="duration" name="duration" placeholder="Ingresa la duración de la película (ej. 2h 30min)" required>
+        </div>
+        <div class="form-group">
+          <label for="poster">Foto</label>
+          <input type="url" class="form-control" id="poster" name="poster" placeholder="Ingresa la URL de la foto" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="button" class="btn btn-secondary" id="clearBtn">Limpiar</button>
+      </form>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+      <script>
+        $(document).ready(function() {
+          $('#movieForm').submit(function(event) {
+            event.preventDefault();
+
+            const formData = {
+              title: $('#title').val().trim(),
+              year: $('#year').val().trim(),
+              director: $('#director').val().trim(),
+              genre: $('#genre').val().trim().split(','), 
+              rating: parseFloat($('#rating').val().trim()),
+              duration: $('#duration').val().trim(),
+              poster: $('#poster').val().trim()
+            };
+
+            $.ajax({
+              type: 'POST',
+              url: 'http://localhost:4057/peliculas', 
+              contentType: 'application/json', 
+              data: JSON.stringify(formData), 
+              success: function(response) {
+                console.log('Película creada:', response);
+              },
+              error: function(error) {
+                console.error('Error al crear la película:', error);
+              }
+            });
+          });
+        });
+      </script>
+      <script src="./public/bundle.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <footer>Elaborado por Angelo Barabino 2024</foo

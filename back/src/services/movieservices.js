@@ -1,4 +1,4 @@
-const pelicula = require('../models/pelicula'); 
+const Pelicula = require('../models/pelicula');
 
 async function getAllMovies() {
     try {
@@ -10,6 +10,18 @@ async function getAllMovies() {
     }
 }
 
+async function createMovie(newMovieData) {
+    try {
+        const newMovie = new Pelicula(newMovieData);
+        await newMovie.save();
+        return newMovie;
+    } catch (error) {
+        console.error('Error al crear una nueva película:', error);
+        throw error;
+    }
+}
+
 module.exports = {
-    getAllMovies
+    getAllMovies,
+    createMovie
 }
